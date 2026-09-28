@@ -1,0 +1,20 @@
+<resources>
+    <!-- Nama Aplikasi -->
+    <string name="app_name">DPI-Indomie</string>
+
+    <!-- Teks Tombol & Header Halaman Utama -->
+    <string name="btn_my_project">My Project</string>
+    <string name="txt_verification">Verification</string>
+
+    <!-- Detail Informasi Snack (Indomie) -->
+    <string name="snack_title">Indomie Goreng Spesial</string>
+    <string name="snack_description">Mie instan goreng lezat dan nikmat dengan bumbu khas serta taburan bawang goreng renyah.</string>
+    <string name="nutrition_title">Komposisi Gizi (per sajian 85g):</string>
+    <string name="nutrition_details">
+        • Energi Total: 380 kcal\n
+        • Lemak Total: 16 g\n
+        • Protein: 8 g\n
+        • Karbohidrat Total: 54 g\n
+        • Garam (Natrium): 1070 mg
+    </string>
+</resources>
