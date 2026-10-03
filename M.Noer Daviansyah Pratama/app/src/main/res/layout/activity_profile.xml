@@ -82,12 +82,22 @@
             android:orientation="vertical"
             android:padding="16dp">
 
+<<<<<<< HEAD
             <TextView
                 android:id="@+id/tvEditProfile"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:gravity="center_vertical"
                 android:text="Edit Profil"
+=======
+            <!-- Menu Buka Website -->
+            <TextView
+                android:id="@+id/tvWebsite"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center_vertical"
+                android:text="Kunjungi Website Kami"
+>>>>>>> 3517872 (Pembuatan Fitur Toolbar dan vector asset)
                 android:textColor="#333333"
                 android:textSize="15sp" />
 

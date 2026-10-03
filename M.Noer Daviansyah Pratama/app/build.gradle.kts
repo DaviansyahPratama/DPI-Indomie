@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.uranus_dapi"
+    namespace = "com.example.RengginangSabit_DPI"
     compileSdk {
         version = release(37)
     }

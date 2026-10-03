@@ -1,4 +1,4 @@
-package com.example.uranus_dapi
+package com.example.RengginangSabit_DPI
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

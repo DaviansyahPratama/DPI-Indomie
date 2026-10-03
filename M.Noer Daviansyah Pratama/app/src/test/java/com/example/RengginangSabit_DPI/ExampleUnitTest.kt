@@ -1,4 +1,4 @@
-package com.example.uranus_dapi
+package com.example.RengginangSabit_DPI
 
 import org.junit.Test
 
