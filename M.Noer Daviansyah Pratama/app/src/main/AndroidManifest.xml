@@ -12,29 +12,57 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Uranus_Dapi">
 
-        <!-- MainActivity diset sebagai LAUNCHER (halaman pertama yang terbuka) -->
+        <!-- SplashActivity sebagai LAUNCHER (Titik Awal Aplikasi) -->
         <activity
-            android:name=".pertemuan_3.ThirdActivity"
+            android:name=".splash.SplashActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Auth -->
         <activity
-            android:name=".pertemuan_2.SecondActivity"
+            android:name=".auth.LoginActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Dashboard / Home -->
+        <activity
+            android:name=".dashboard.DashboardActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Monitoring -->
+        <activity
+            android:name=".monitoring.MonitoringActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".MainActivity"
+            android:name=".monitoring.DetailDataActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- Orders -->
         <activity
-            android:name=".pertemuan_3.ThirdResultActivity"
+            android:name=".orders.OrdersActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- Reports -->
+        <activity
+            android:name=".reports.ReportsActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Profile -->
+        <activity
+            android:name=".profile.ProfileActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
     </application>
 
 </manifest>
