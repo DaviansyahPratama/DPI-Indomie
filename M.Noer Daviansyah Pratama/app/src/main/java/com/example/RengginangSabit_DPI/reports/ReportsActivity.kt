@@ -1,7 +1,10 @@
 package com.example.RengginangSabit_DPI.reports
 
 import android.widget.Toast
+import com.example.RengginangSabit_DPI.R
 import com.example.RengginangSabit_DPI.core.BaseActivity
+import com.example.RengginangSabit_DPI.core.setupBottomNavigation
+import com.example.RengginangSabit_DPI.databinding.ActivityReportsBinding
 
 class ReportsActivity : BaseActivity<ActivityReportsBinding>(ActivityReportsBinding::inflate) {
 

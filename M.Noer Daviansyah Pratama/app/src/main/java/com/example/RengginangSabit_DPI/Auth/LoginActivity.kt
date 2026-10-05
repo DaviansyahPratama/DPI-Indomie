@@ -1,4 +1,4 @@
-package com.example.RengginangSabit_DPI.Auth
+package com.example.RengginangSabit_DPI.auth
 
 import android.content.Intent
 import com.example.RengginangSabit_DPI.dashboard.DashboardActivity
