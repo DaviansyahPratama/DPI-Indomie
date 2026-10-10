@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F9FA">
+    android:background="#F7F7F5">
 
     <!-- Material Toolbar -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@android:color/white"
+        android:background="#FFFFFF"
         android:elevation="4dp">
 
         <LinearLayout
@@ -20,14 +20,14 @@
             android:gravity="center_vertical"
             android:paddingEnd="16dp">
 
-            <!-- Search Bar in Center -->
+            <!-- Search Bar -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="0dp"
-                app:cardBackgroundColor="#F1F3F5"
+                app:cardBackgroundColor="#F7F7F5"
                 app:strokeWidth="0dp">
 
                 <EditText
@@ -38,21 +38,34 @@
                     android:drawableStart="@android:drawable/ic_menu_search"
                     android:drawablePadding="8dp"
                     android:hint="Cari data, menu..."
+                    android:textColor="#252525"
+                    android:textColorHint="#777777"
                     android:inputType="text"
                     android:paddingHorizontal="12dp"
                     android:textSize="13sp" />
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Profile Icon on Right -->
+            <!-- Profile Icon -->
             <ImageButton
                 android:id="@+id/btnProfile"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginStart="12dp"
+                android:layout_marginStart="8dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="Profil"
                 android:src="@drawable/ic_profile"
-                app:tint="#333333" />
+                app:tint="#C94F32" />
+
+            <!-- Logout Icon -->
+            <ImageButton
+                android:id="@+id/btnLogoutToolbar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="4dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Keluar"
+                android:src="@android:drawable/ic_lock_power_off"
+                app:tint="#D9534F" />
 
         </LinearLayout>
     </com.google.android.material.appbar.MaterialToolbar>
@@ -81,7 +94,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ahmad Hidayat"
-                android:textColor="#222222"
+                android:textColor="#252525"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -91,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Ringkasan Hari Ini"
-                android:textColor="#333333"
+                android:textColor="#252525"
                 android:textStyle="bold" />
 
             <!-- Grid Card Statistik -->
@@ -106,7 +119,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="4dp"
                     android:layout_weight="1"
-                    android:background="@android:color/white"
+                    android:background="#FFFFFF"
                     android:orientation="vertical"
                     android:padding="12dp">
 
@@ -114,13 +127,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Total Produksi"
+                        android:textColor="#777777"
                         android:textSize="11sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="1,248 kg"
-                        android:textColor="#000000"
+                        android:textColor="#252525"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -130,7 +144,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:layout_weight="1"
-                    android:background="@android:color/white"
+                    android:background="#FFFFFF"
                     android:orientation="vertical"
                     android:padding="12dp">
 
@@ -138,13 +152,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Stok Tersedia"
+                        android:textColor="#777777"
                         android:textSize="11sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="856 kg"
-                        android:textColor="#000000"
+                        android:textColor="#252525"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -155,7 +170,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:layout_marginTop="16dp"
-                android:background="@android:color/white"
+                android:background="#FFFFFF"
                 android:orientation="vertical"
                 android:padding="12dp">
 
@@ -163,6 +178,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Tren Produksi Mingguan"
+                    android:textColor="#252525"
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
@@ -171,7 +187,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="8dp"
-                    android:background="#EAEAEA" />
+                    android:background="#F7F7F5" />
             </LinearLayout>
 
             <!-- Akses Cepat -->
@@ -180,7 +196,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Akses Cepat"
-                android:textColor="#333333"
+                android:textColor="#252525"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -189,20 +205,38 @@
                 android:layout_marginTop="8dp"
                 android:orientation="horizontal">
 
+                <!-- Tombol Primary -->
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="4dp"
                     android:layout_weight="1"
-                    android:text="+ Tambah Lini" />
+                    android:backgroundTint="#C94F32"
+                    android:text="+ Tambah Lini"
+                    android:textColor="#FFFFFF" />
 
+                <!-- Tombol Secondary -->
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:layout_weight="1"
-                    android:text="Cetak Batch" />
+                    android:backgroundTint="#E89B2C"
+                    android:text="Cetak Batch"
+                    android:textColor="#FFFFFF" />
             </LinearLayout>
+
+            <!-- Tombol Logout Status Error -->
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#D9534F"
+                android:text="Keluar / Logout"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF" />
 
         </LinearLayout>
     </ScrollView>
@@ -212,6 +246,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
         app:menu="@menu/bottom_nav_menu" />
 
 </RelativeLayout>

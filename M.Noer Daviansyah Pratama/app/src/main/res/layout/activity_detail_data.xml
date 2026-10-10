@@ -3,18 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F9FA"
+    android:background="#F7F7F5"
     android:orientation="vertical">
 
-    <!-- Material Toolbar dengan Back Button -->
+    <!-- Material Toolbar -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@android:color/white"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
         app:navigationIcon="@drawable/ic_arrow_back"
         app:title="Lini Produksi A"
-        app:titleCentered="true" />
+        app:titleCentered="true"
+        app:titleTextColor="#252525">
+
+        <!-- Logout Icon di Toolbar -->
+        <ImageButton
+            android:id="@+id/btnLogoutToolbar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Keluar"
+            android:src="@android:drawable/ic_lock_power_off"
+            app:tint="#D9534F" />
+
+    </com.google.android.material.appbar.MaterialToolbar>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -30,7 +46,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/white"
+                android:background="#FFFFFF"
                 android:padding="12dp">
 
                 <LinearLayout
@@ -44,12 +60,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Output Hari Ini"
+                        android:textColor="#777777"
                         android:textSize="10sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="312 kg"
+                        android:textColor="#252525"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -64,13 +82,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Efisiensi Mesin"
+                        android:textColor="#777777"
                         android:textSize="10sp" />
 
+                    <!-- Warna Success (#4CAF50) -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="87%"
-                        android:textColor="#27AE60"
+                        android:textColor="#4CAF50"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -85,29 +105,126 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Waktu Operasi"
+                        android:textColor="#777777"
                         android:textSize="10sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="6.5 Jam"
+                        android:textColor="#252525"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Chart Bar Output Per Jam -->
+            <!-- Judul Chart Output Per Jam -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Output Per Jam (kg)"
+                android:textColor="#252525"
                 android:textStyle="bold" />
 
-            <View
+            <!-- Visualisasi Bar Chart Dummy -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:layout_marginTop="8dp"
-                android:background="#EAEAEA" />
+                android:background="#FFFFFF"
+                android:gravity="bottom"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <!-- Bar 1 (08:00) -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="bottom|center_horizontal"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="16dp"
+                        android:layout_height="50dp"
+                        android:background="#E89B2C" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="08"
+                        android:textColor="#777777"
+                        android:textSize="9sp" />
+                </LinearLayout>
+
+                <!-- Bar 2 (09:00) -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="bottom|center_horizontal"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="16dp"
+                        android:layout_height="80dp"
+                        android:background="#C94F32" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="09"
+                        android:textColor="#777777"
+                        android:textSize="9sp" />
+                </LinearLayout>
+
+                <!-- Bar 3 (10:00) -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="bottom|center_horizontal"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="16dp"
+                        android:layout_height="65dp"
+                        android:background="#C94F32" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="10"
+                        android:textColor="#777777"
+                        android:textSize="9sp" />
+                </LinearLayout>
+
+                <!-- Bar 4 (11:00) -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="bottom|center_horizontal"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="16dp"
+                        android:layout_height="40dp"
+                        android:background="#E89B2C" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="11"
+                        android:textColor="#777777"
+                        android:textSize="9sp" />
+                </LinearLayout>
+
+            </LinearLayout>
 
             <!-- Log Aktifitas Lini -->
             <TextView
@@ -115,6 +232,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Log Aktifitas Lini"
+                android:textColor="#252525"
                 android:textStyle="bold" />
 
             <!-- Timeline Log Item -->
@@ -122,7 +240,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:background="@android:color/white"
+                android:background="#FFFFFF"
                 android:orientation="vertical"
                 android:padding="12dp">
 
@@ -130,6 +248,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="12:00 - Istirahat produksi mesin jeda"
+                    android:textColor="#252525"
                     android:textSize="12sp" />
 
                 <TextView
@@ -137,6 +256,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:text="10:30 - Bahan baku beras ketan ditambahkan"
+                    android:textColor="#252525"
                     android:textSize="12sp" />
 
                 <TextView
@@ -144,6 +264,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:text="08:00 - Mesin dinyalakan &amp; pemanasan oven"
+                    android:textColor="#252525"
                     android:textSize="12sp" />
             </LinearLayout>
 
