@@ -31,37 +31,15 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- Dashboard / Home -->
+        <!-- Main Container Activity (Halaman Utama dengan Fragment & Bottom Navigation) -->
         <activity
-            android:name=".dashboard.DashboardActivity"
+            android:name=".MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- Monitoring -->
-        <activity
-            android:name=".monitoring.MonitoringActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
+        <!-- Secondary Activities -->
         <activity
             android:name=".monitoring.DetailDataActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-
-        <!-- Orders -->
-        <activity
-            android:name=".orders.OrdersActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-
-        <!-- Reports -->
-        <activity
-            android:name=".reports.ReportsActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-
-        <!-- Profile -->
-        <activity
-            android:name=".profile.ProfileActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 

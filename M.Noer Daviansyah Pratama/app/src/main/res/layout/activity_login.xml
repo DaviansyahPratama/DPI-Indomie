@@ -16,7 +16,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="32dp"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@drawable/rengginanglogo" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -50,7 +50,7 @@
             android:layout_height="48dp"
             android:layout_marginTop="8dp"
             android:background="@android:color/white"
-            android:hint="ahmad.hidayat@sabit.co.id"
+            android:hint="daviansyah@sabit.co.id"
             android:inputType="textEmailAddress"
             android:paddingHorizontal="16dp" />
 

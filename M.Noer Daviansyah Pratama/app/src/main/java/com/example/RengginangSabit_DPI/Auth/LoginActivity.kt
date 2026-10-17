@@ -3,7 +3,7 @@ package com.example.RengginangSabit_DPI.auth
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
-import com.example.RengginangSabit_DPI.dashboard.DashboardActivity
+import com.example.RengginangSabit_DPI.MainActivity
 import com.example.RengginangSabit_DPI.core.BaseActivity
 import com.example.RengginangSabit_DPI.databinding.ActivityLoginBinding
 
@@ -29,8 +29,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
                 editor.putBoolean("isLogin", true)
                 editor.apply()
 
-                // Pindah ke DashboardActivity
-                val intent = Intent(this, DashboardActivity::class.java)
+                // Pindah ke MainActivity yang menampung Fragment
+                val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {

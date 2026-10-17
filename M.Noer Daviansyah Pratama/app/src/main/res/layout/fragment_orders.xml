@@ -92,7 +92,7 @@
         android:clipToPadding="false"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintTop_toBottomOf="@id/svFilter"
-        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@android:layout/simple_list_item_2" />
 
     <!-- FAB Tambah Pesanan -->
@@ -105,17 +105,7 @@
         android:src="@android:drawable/ic_input_add"
         app:backgroundTint="#FF6B00"
         app:tint="@color/white"
-        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- Bottom Navigation -->
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:elevation="8dp"
-        app:menu="@menu/bottom_nav_menu"
-        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
