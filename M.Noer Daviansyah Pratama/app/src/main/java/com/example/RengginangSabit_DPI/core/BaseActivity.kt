@@ -13,6 +13,7 @@ abstract class BaseActivity<VB : ViewBinding>(
     protected lateinit var binding: VB
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        ThemeManager.applyTheme(this)
         super.onCreate(savedInstanceState)
         binding = bindingFactory(layoutInflater)
         setContentView(binding.root)

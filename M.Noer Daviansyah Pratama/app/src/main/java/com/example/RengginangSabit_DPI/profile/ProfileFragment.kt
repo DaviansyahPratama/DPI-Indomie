@@ -5,6 +5,7 @@ import android.content.Intent
 import android.widget.Toast
 import com.example.RengginangSabit_DPI.auth.LoginActivity
 import com.example.RengginangSabit_DPI.core.BaseFragment
+import com.example.RengginangSabit_DPI.core.ThemeManager
 import com.example.RengginangSabit_DPI.databinding.FragmentProfileBinding
 
 class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBinding::inflate) {
@@ -13,12 +14,18 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
         // 1. Setup Toolbar
         setupToolbar(binding.toolbar, "Profil Saya", showBackButton = false)
 
-        // 2. Event Klik Buka Website Vercel Rengginang Sabit
+        // 2. Setup Switch Dark Mode
+        binding.switchDarkMode.isChecked = ThemeManager.isDarkMode(requireContext())
+        binding.switchDarkMode.setOnCheckedChangeListener { _, isChecked ->
+            ThemeManager.setDarkMode(requireContext(), isChecked)
+        }
+
+        // 3. Event Klik Buka Website Vercel Rengginang Sabit
         binding.tvWebsite.setOnClickListener {
             openWebPage("https://rengginangsabit.vercel.app")
         }
 
-        // 3. Event Klik Keluar Aplikasi
+        // 4. Event Klik Keluar Aplikasi
         binding.tvLogout.setOnClickListener {
             Toast.makeText(requireContext(), "Berhasil Keluar", Toast.LENGTH_SHORT).show()
             val sharedPref = requireActivity().getSharedPreferences("USER_SESSION", Context.MODE_PRIVATE)

@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F7F5">
+    android:background="@color/background_page">
 
     <!-- Material Toolbar -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#FFFFFF"
+        android:background="@color/toolbar_background"
         android:elevation="4dp">
 
         <LinearLayout
@@ -27,7 +27,7 @@
                 android:layout_weight="1"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="0dp"
-                app:cardBackgroundColor="#F7F7F5"
+                app:cardBackgroundColor="@color/background_page"
                 app:strokeWidth="0dp">
 
                 <EditText
@@ -38,8 +38,8 @@
                     android:drawableStart="@android:drawable/ic_menu_search"
                     android:drawablePadding="8dp"
                     android:hint="Cari data, menu..."
-                    android:textColor="#252525"
-                    android:textColorHint="#777777"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_secondary"
                     android:inputType="text"
                     android:paddingHorizontal="12dp"
                     android:textSize="13sp" />
@@ -54,7 +54,7 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="Profil"
                 android:src="@drawable/ic_profile"
-                app:tint="#C94F32" />
+                app:tint="@color/primary_orange_dark" />
 
             <!-- Logout Icon -->
             <ImageButton
@@ -65,7 +65,7 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="Keluar"
                 android:src="@android:drawable/ic_lock_power_off"
-                app:tint="#D9534F" />
+                app:tint="@color/status_red" />
 
         </LinearLayout>
     </com.google.android.material.appbar.MaterialToolbar>
@@ -86,14 +86,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Selamat Pagi,"
-                android:textColor="#777777"
+                android:textColor="@color/text_secondary"
                 android:textSize="12sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Daviansyah Pratama"
-                android:textColor="#252525"
+                android:textColor="@color/text_primary"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -103,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Ringkasan Hari Ini"
-                android:textColor="#252525"
+                android:textColor="@color/text_primary"
                 android:textStyle="bold" />
 
             <!-- Grid Card Statistik -->
@@ -118,7 +118,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="4dp"
                     android:layout_weight="1"
-                    android:background="#FFFFFF"
+                    android:background="@color/card_background"
                     android:orientation="vertical"
                     android:padding="12dp">
 
@@ -126,14 +126,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Total Produksi"
-                        android:textColor="#777777"
+                        android:textColor="@color/text_secondary"
                         android:textSize="11sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="1,248 kg"
-                        android:textColor="#252525"
+                        android:textColor="@color/text_primary"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -143,7 +143,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:layout_weight="1"
-                    android:background="#FFFFFF"
+                    android:background="@color/card_background"
                     android:orientation="vertical"
                     android:padding="12dp">
 
@@ -151,43 +151,135 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Stok Tersedia"
-                        android:textColor="#777777"
+                        android:textColor="@color/text_secondary"
                         android:textSize="11sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="856 kg"
-                        android:textColor="#252525"
+                        android:textColor="@color/text_primary"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Card Tren Produksi Mingguan -->
-            <LinearLayout
+            <!-- Card Grafik Statistik Produksi (Fitur 1: MPAndroidChart) -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:background="#FFFFFF"
-                android:orientation="vertical"
-                android:padding="12dp">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:strokeWidth="0dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tren Produksi Mingguan"
-                    android:textColor="#252525"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
-
-                <!-- Placeholder Grafik Line -->
-                <View
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:background="#F7F7F5" />
-            </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <!-- Header Judul & Simulation Badge -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Grafik Statistik Produksi"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <!-- Keterangan Simulasi Data -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="8dp"
+                            android:paddingVertical="2dp"
+                            android:text="* Data Simulasi"
+                            android:textColor="@color/primary_orange"
+                            android:textSize="10sp"
+                            android:textStyle="italic" />
+                    </LinearLayout>
+
+                    <!-- Subtitle Total Produksi -->
+                    <TextView
+                        android:id="@+id/tvTotalProduksiChart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Total Produksi: 1,245 kg"
+                        android:textColor="@color/primary_orange"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <!-- Filter Periode (Harian, Mingguan, Bulanan) -->
+                    <com.google.android.material.button.MaterialButtonToggleGroup
+                        android:id="@+id/toggleGroupPeriode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:singleSelection="true"
+                        app:selectionRequired="true"
+                        app:checkedButton="@id/btnPeriodeHarian">
+
+                        <Button
+                            android:id="@+id/btnPeriodeHarian"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="38dp"
+                            android:layout_weight="1"
+                            android:text="Harian"
+                            android:textSize="11sp"
+                            android:padding="0dp" />
+
+                        <Button
+                            android:id="@+id/btnPeriodeMingguan"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="38dp"
+                            android:layout_weight="1"
+                            android:text="Mingguan"
+                            android:textSize="11sp"
+                            android:padding="0dp" />
+
+                        <Button
+                            android:id="@+id/btnPeriodeBulanan"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="38dp"
+                            android:layout_weight="1"
+                            android:text="Bulanan"
+                            android:textSize="11sp"
+                            android:padding="0dp" />
+                    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                    <!-- MPAndroidChart BarChart -->
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/barChartProduction"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:layout_marginTop="12dp" />
+
+                    <!-- Empty State View (Tampil jika data kosong) -->
+                    <TextView
+                        android:id="@+id/tvEmptyChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:gravity="center"
+                        android:text="Belum ada data statistik produksi"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
             <!-- Akses Cepat -->
             <TextView
@@ -195,7 +287,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Akses Cepat"
-                android:textColor="#252525"
+                android:textColor="@color/text_primary"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -210,7 +302,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="4dp"
                     android:layout_weight="1"
-                    android:backgroundTint="#C94F32"
+                    android:backgroundTint="@color/primary_orange_dark"
                     android:text="+ Tambah Lini"
                     android:textColor="#FFFFFF" />
 
@@ -220,7 +312,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:layout_weight="1"
-                    android:backgroundTint="#E89B2C"
+                    android:backgroundTint="@color/primary_orange_secondary"
                     android:text="Cetak Batch"
                     android:textColor="#FFFFFF" />
             </LinearLayout>
@@ -232,7 +324,7 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="16dp"
-                android:backgroundTint="#D9534F"
+                android:backgroundTint="@color/status_red"
                 android:text="Keluar / Logout"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF" />

@@ -4,18 +4,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F7F5">
+    android:background="@color/background_page">
 
     <!-- Material Toolbar -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/white"
+        android:background="@color/toolbar_background"
         android:elevation="2dp"
         app:title="Profil Pengembang"
         app:titleCentered="true"
-        app:titleTextColor="#252525"
+        app:titleTextColor="@color/text_primary"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
@@ -36,6 +36,7 @@
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="0dp"
                 app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/card_background"
                 app:strokeWidth="0dp">
 
                 <LinearLayout
@@ -45,12 +46,12 @@
                     android:gravity="center"
                     android:padding="24dp">
 
-                    <!-- Avatar Initial (Warna Primary #C94F32) -->
+                    <!-- Avatar Initial -->
                     <TextView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:background="@android:drawable/btn_default"
-                        android:backgroundTint="#C94F32"
+                        android:backgroundTint="@color/primary_orange_dark"
                         android:gravity="center"
                         android:text="DP"
                         android:textColor="@color/white"
@@ -63,7 +64,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:text="Daviansyah Pratama"
-                        android:textColor="#252525"
+                        android:textColor="@color/text_primary"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -72,7 +73,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Android Developer &amp; Joki MLBB"
-                        android:textColor="#777777"
+                        android:textColor="@color/text_secondary"
                         android:textSize="13sp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -84,6 +85,7 @@
                 android:layout_margin="16dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/card_background"
                 app:strokeWidth="0dp">
 
                 <LinearLayout
@@ -97,7 +99,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Media Sosial"
-                        android:textColor="#C94F32"
+                        android:textColor="@color/primary_orange_dark"
                         android:textSize="12sp"
                         android:textStyle="bold" />
 
@@ -107,21 +109,21 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:text="• GitHub: github.com/Daviansyah Pratama \n• Instagram: @daviansyah_pratama"
-                        android:textColor="#252525"
+                        android:textColor="@color/text_primary"
                         android:textSize="13sp" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginVertical="12dp"
-                        android:background="#E0E0E0" />
+                        android:background="@color/divider_color" />
 
                     <!-- Hobi -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Hobi &amp; Minat"
-                        android:textColor="#C94F32"
+                        android:textColor="@color/primary_orange_dark"
                         android:textSize="12sp"
                         android:textStyle="bold" />
 
@@ -131,21 +133,21 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:text="Problem Solving, Joki Mobile Legend,Global Carmilla no 8"
-                        android:textColor="#252525"
+                        android:textColor="@color/text_primary"
                         android:textSize="13sp" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginVertical="12dp"
-                        android:background="#E0E0E0" />
+                        android:background="@color/divider_color" />
 
                     <!-- Kekuatan Terbesar -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Kekuatan Terbesar"
-                        android:textColor="#C94F32"
+                        android:textColor="@color/primary_orange_dark"
                         android:textSize="12sp"
                         android:textStyle="bold" />
 
@@ -155,8 +157,69 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:text="Analisis logika yang kuat, konsistensi penulisan kode yang bersih (clean code), serta adaptabilitas tinggi terhadap tantangan teknis baru."
-                        android:textColor="#252525"
+                        android:textColor="@color/text_primary"
                         android:textSize="13sp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card Pengaturan Tema / Dark Mode -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pengaturan Tampilan"
+                        android:textColor="@color/primary_orange_dark"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Mode Gelap (Dark Mode)"
+                                android:textColor="@color/text_primary"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Aktifkan tampilan tema gelap"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switchDarkMode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -169,6 +232,7 @@
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/card_background"
                 app:strokeWidth="0dp">
 
                 <LinearLayout
@@ -183,13 +247,13 @@
                         android:layout_height="48dp"
                         android:gravity="center_vertical"
                         android:text="Kunjungi Website Kami"
-                        android:textColor="#252525"
+                        android:textColor="@color/text_primary"
                         android:textSize="14sp" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="#E0E0E0" />
+                        android:background="@color/divider_color" />
 
                     <!-- Logout Button (Status Error Color #D9534F) -->
                     <TextView
@@ -198,7 +262,7 @@
                         android:layout_height="48dp"
                         android:gravity="center_vertical"
                         android:text="Keluar dari Akun"
-                        android:textColor="#D9534F"
+                        android:textColor="@color/status_red"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 

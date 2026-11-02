@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F9FA">
+    android:background="@color/background_page">
 
     <!-- Material Toolbar -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@android:color/white"
+        android:background="@color/toolbar_background"
         app:title="Monitoring Produksi"
         app:titleCentered="true" />
 
@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Status perangkat &amp; produksi real-time"
-                android:textColor="#757575"
+                android:textColor="@color/text_secondary"
                 android:textSize="12sp"
                 android:layout_marginBottom="12dp" />
 
@@ -42,6 +42,7 @@
                 android:layout_marginBottom="10dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="1dp"
+                app:cardBackgroundColor="@color/card_background"
                 app:strokeWidth="0dp">
 
                 <LinearLayout
@@ -62,14 +63,14 @@
                             android:layout_height="wrap_content"
                             android:text="Lini Produksi A"
                             android:textStyle="bold"
-                            android:textColor="#333333"
+                            android:textColor="@color/text_primary"
                             android:textSize="14sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Pemasakan Stabil"
-                            android:textColor="#757575"
+                            android:textColor="@color/text_secondary"
                             android:textSize="12sp" />
                     </LinearLayout>
 
@@ -77,7 +78,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="45 kg/jam"
-                        android:textColor="#27AE60"
+                        android:textColor="@color/status_green"
                         android:textStyle="bold"
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -91,6 +92,7 @@
                 android:layout_marginBottom="10dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="1dp"
+                app:cardBackgroundColor="@color/card_background"
                 app:strokeWidth="0dp">
 
                 <LinearLayout
@@ -111,14 +113,14 @@
                             android:layout_height="wrap_content"
                             android:text="Lini Produksi B"
                             android:textStyle="bold"
-                            android:textColor="#333333"
+                            android:textColor="@color/text_primary"
                             android:textSize="14sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Pembersihan Alat"
-                            android:textColor="#757575"
+                            android:textColor="@color/text_secondary"
                             android:textSize="12sp" />
                     </LinearLayout>
 
@@ -126,7 +128,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="0 kg/jam"
-                        android:textColor="#E67E22"
+                        android:textColor="@color/primary_orange_secondary"
                         android:textStyle="bold"
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -140,6 +142,7 @@
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="1dp"
+                app:cardBackgroundColor="@color/card_background"
                 app:strokeWidth="0dp">
 
                 <LinearLayout
@@ -160,14 +163,14 @@
                             android:layout_height="wrap_content"
                             android:text="Lini Produksi C"
                             android:textStyle="bold"
-                            android:textColor="#333333"
+                            android:textColor="@color/text_primary"
                             android:textSize="14sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Pencetakan Adonan"
-                            android:textColor="#757575"
+                            android:textColor="@color/text_secondary"
                             android:textSize="12sp" />
                     </LinearLayout>
 
@@ -175,7 +178,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="38 kg/jam"
-                        android:textColor="#27AE60"
+                        android:textColor="@color/status_green"
                         android:textStyle="bold"
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -187,7 +190,7 @@
                 android:layout_height="wrap_content"
                 android:text="Suhu &amp; Kelembaban Oven"
                 android:textStyle="bold"
-                android:textColor="#333333"
+                android:textColor="@color/text_primary"
                 android:textSize="14sp"
                 android:layout_marginBottom="8dp" />
 
@@ -204,6 +207,7 @@
                     android:layout_marginEnd="6dp"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="1dp"
+                    app:cardBackgroundColor="@color/card_background"
                     app:strokeWidth="0dp">
 
                     <LinearLayout
@@ -217,14 +221,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Suhu Pengering"
-                            android:textColor="#757575"
+                            android:textColor="@color/text_secondary"
                             android:textSize="11sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="74°C"
-                            android:textColor="#333333"
+                            android:textColor="@color/text_primary"
                             android:textSize="22sp"
                             android:textStyle="bold"
                             android:layout_marginVertical="4dp" />
@@ -233,7 +237,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Normal (Target 70-80°C)"
-                            android:textColor="#27AE60"
+                            android:textColor="@color/status_green"
                             android:textSize="10sp" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -246,6 +250,7 @@
                     android:layout_marginStart="6dp"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="1dp"
+                    app:cardBackgroundColor="@color/card_background"
                     app:strokeWidth="0dp">
 
                     <LinearLayout
@@ -259,14 +264,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Kelembaban"
-                            android:textColor="#757575"
+                            android:textColor="@color/text_secondary"
                             android:textSize="11sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="42%"
-                            android:textColor="#333333"
+                            android:textColor="@color/text_primary"
                             android:textSize="22sp"
                             android:textStyle="bold"
                             android:layout_marginVertical="4dp" />
@@ -275,7 +280,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Optimum (Target 40-45%)"
-                            android:textColor="#27AE60"
+                            android:textColor="@color/status_green"
                             android:textSize="10sp" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
