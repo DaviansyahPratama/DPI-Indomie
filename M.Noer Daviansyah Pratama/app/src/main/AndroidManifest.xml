@@ -25,6 +25,12 @@
             </intent-filter>
         </activity>
 
+        <!-- Onboarding Screen -->
+        <activity
+            android:name=".onboarding.OnboardingActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
         <!-- Auth -->
         <activity
             android:name=".auth.LoginActivity"

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_page">
@@ -73,262 +74,274 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar"
-        android:padding="16dp">
+        android:layout_below="@id/toolbar">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- User Header -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Selamat Pagi,"
-                android:textColor="@color/text_secondary"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Daviansyah Pratama"
-                android:textColor="@color/text_primary"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <!-- Section Ringkasan Hari Ini -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Ringkasan Hari Ini"
-                android:textColor="@color/text_primary"
-                android:textStyle="bold" />
-
-            <!-- Grid Card Statistik -->
-            <LinearLayout
+            <!-- User Header Card dengan Custom Background Drawable -->
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="4dp"
-                    android:layout_weight="1"
-                    android:background="@color/card_background"
-                    android:orientation="vertical"
-                    android:padding="12dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Total Produksi"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="11sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="1,248 kg"
-                        android:textColor="@color/text_primary"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_weight="1"
-                    android:background="@color/card_background"
-                    android:orientation="vertical"
-                    android:padding="12dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Stok Tersedia"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="11sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="856 kg"
-                        android:textColor="@color/text_primary"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <!-- Card Grafik Statistik Produksi (Fitur 1: MPAndroidChart) -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp"
-                app:cardBackgroundColor="@color/card_background"
-                app:strokeWidth="0dp">
+                android:background="@drawable/bg_dashboard_header"
+                android:padding="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="14dp">
+                    android:orientation="vertical">
 
-                    <!-- Header Judul & Simulation Badge -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Grafik Statistik Produksi"
-                            android:textColor="@color/text_primary"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <!-- Keterangan Simulasi Data -->
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingHorizontal="8dp"
-                            android:paddingVertical="2dp"
-                            android:text="* Data Simulasi"
-                            android:textColor="@color/primary_orange"
-                            android:textSize="10sp"
-                            android:textStyle="italic" />
-                    </LinearLayout>
-
-                    <!-- Subtitle Total Produksi -->
                     <TextView
-                        android:id="@+id/tvTotalProduksiChart"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="Total Produksi: 1,245 kg"
-                        android:textColor="@color/primary_orange"
-                        android:textSize="13sp"
+                        android:text="Selamat Pagi,"
+                        android:textColor="#FFE0B2"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Daviansyah Pratama 👋"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
-                    <!-- Filter Periode (Harian, Mingguan, Bulanan) -->
-                    <com.google.android.material.button.MaterialButtonToggleGroup
-                        android:id="@+id/toggleGroupPeriode"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        app:singleSelection="true"
-                        app:selectionRequired="true"
-                        app:checkedButton="@id/btnPeriodeHarian">
-
-                        <Button
-                            android:id="@+id/btnPeriodeHarian"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                            android:layout_width="0dp"
-                            android:layout_height="38dp"
-                            android:layout_weight="1"
-                            android:text="Harian"
-                            android:textSize="11sp"
-                            android:padding="0dp" />
-
-                        <Button
-                            android:id="@+id/btnPeriodeMingguan"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                            android:layout_width="0dp"
-                            android:layout_height="38dp"
-                            android:layout_weight="1"
-                            android:text="Mingguan"
-                            android:textSize="11sp"
-                            android:padding="0dp" />
-
-                        <Button
-                            android:id="@+id/btnPeriodeBulanan"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                            android:layout_width="0dp"
-                            android:layout_height="38dp"
-                            android:layout_weight="1"
-                            android:text="Bulanan"
-                            android:textSize="11sp"
-                            android:padding="0dp" />
-                    </com.google.android.material.button.MaterialButtonToggleGroup>
-
-                    <!-- MPAndroidChart BarChart -->
-                    <com.github.mikephil.charting.charts.BarChart
-                        android:id="@+id/barChartProduction"
-                        android:layout_width="match_parent"
-                        android:layout_height="220dp"
-                        android:layout_marginTop="12dp" />
-
-                    <!-- Empty State View (Tampil jika data kosong) -->
                     <TextView
-                        android:id="@+id/tvEmptyChart"
-                        android:layout_width="match_parent"
-                        android:layout_height="180dp"
-                        android:gravity="center"
-                        android:text="Belum ada data statistik produksi"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="13sp"
-                        android:visibility="gone" />
-
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Sistem Monitoring &amp; Manajemen Produksi Rengginang Sabit"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp" />
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
 
-            <!-- Akses Cepat -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Akses Cepat"
-                android:textColor="@color/text_primary"
-                android:textStyle="bold" />
+            </FrameLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal">
+                android:orientation="vertical"
+                android:padding="16dp">
 
-                <!-- Tombol Primary -->
-                <Button
-                    android:layout_width="0dp"
+                <!-- Section Ringkasan Hari Ini -->
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="4dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/primary_orange_dark"
-                    android:text="+ Tambah Lini"
+                    android:text="Ringkasan Hari Ini"
+                    android:textColor="@color/text_primary"
+                    android:textStyle="bold" />
+
+                <!-- Grid Card Statistik -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:background="@color/card_background"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total Produksi"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1,248 kg"
+                            android:textColor="@color/text_primary"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+                        android:background="@color/card_background"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Stok Tersedia"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="856 kg"
+                            android:textColor="@color/text_primary"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Card Grafik Statistik Produksi (Fitur 1: MPAndroidChart) -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="@color/card_background"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <!-- Header Judul & Simulation Badge -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Grafik Statistik Produksi"
+                                android:textColor="@color/text_primary"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <!-- Keterangan Simulasi Data -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="2dp"
+                                android:text="* Data Simulasi"
+                                android:textColor="@color/primary_orange"
+                                android:textSize="10sp"
+                                android:textStyle="italic" />
+                        </LinearLayout>
+
+                        <!-- Subtitle Total Produksi -->
+                        <TextView
+                            android:id="@+id/tvTotalProduksiChart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Total Produksi: 1,245 kg"
+                            android:textColor="@color/primary_orange"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <!-- Filter Periode (Harian, Mingguan, Bulanan) -->
+                        <com.google.android.material.button.MaterialButtonToggleGroup
+                            android:id="@+id/toggleGroupPeriode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:singleSelection="true"
+                            app:selectionRequired="true"
+                            app:checkedButton="@id/btnPeriodeHarian">
+
+                            <Button
+                                android:id="@+id/btnPeriodeHarian"
+                                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                android:layout_width="0dp"
+                                android:layout_height="38dp"
+                                android:layout_weight="1"
+                                android:text="Harian"
+                                android:textSize="11sp"
+                                android:padding="0dp" />
+
+                            <Button
+                                android:id="@+id/btnPeriodeMingguan"
+                                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                android:layout_width="0dp"
+                                android:layout_height="38dp"
+                                android:layout_weight="1"
+                                android:text="Mingguan"
+                                android:textSize="11sp"
+                                android:padding="0dp" />
+
+                            <Button
+                                android:id="@+id/btnPeriodeBulanan"
+                                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                android:layout_width="0dp"
+                                android:layout_height="38dp"
+                                android:layout_weight="1"
+                                android:text="Bulanan"
+                                android:textSize="11sp"
+                                android:padding="0dp" />
+                        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                        <!-- MPAndroidChart BarChart -->
+                        <com.github.mikephil.charting.charts.BarChart
+                            android:id="@+id/barChartProduction"
+                            android:layout_width="match_parent"
+                            android:layout_height="220dp"
+                            android:layout_marginTop="12dp" />
+
+                        <!-- Empty State View (Tampil jika data kosong) -->
+                        <TextView
+                            android:id="@+id/tvEmptyChart"
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp"
+                            android:gravity="center"
+                            android:text="Belum ada data statistik produksi"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Section Fitur Utama (Grid Layout) -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Menu Utama &amp; Layanan Grid"
+                    android:textColor="@color/text_primary"
+                    android:textStyle="bold" />
+
+                <!-- RecyclerView Grid Menu -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvGridMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="2"
+                    tools:listitem="@layout/item_grid_menu" />
+
+                <!-- Tombol Logout -->
+                <Button
+                    android:id="@+id/btnLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="@color/status_red"
+                    android:text="Keluar / Logout"
+                    android:textAllCaps="false"
                     android:textColor="#FFFFFF" />
 
-                <!-- Tombol Secondary -->
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/primary_orange_secondary"
-                    android:text="Cetak Batch"
-                    android:textColor="#FFFFFF" />
             </LinearLayout>
-
-            <!-- Tombol Logout Status Error -->
-            <Button
-                android:id="@+id/btnLogout"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/status_red"
-                android:text="Keluar / Logout"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF" />
-
         </LinearLayout>
     </ScrollView>
 

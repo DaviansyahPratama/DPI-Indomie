@@ -4,7 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.view.View
+import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.RengginangSabit_DPI.MainActivity
 import com.example.RengginangSabit_DPI.R
 import com.example.RengginangSabit_DPI.auth.LoginActivity
@@ -37,6 +39,32 @@ class DashboardFragment : BaseFragment<FragmentDashboardBinding>(FragmentDashboa
         // 3. Setup MPAndroidChart Grafik Statistik Produksi
         setupChartPeriodToggle()
         showChartData(PeriodType.HARIAN)
+
+        // 4. Setup Grid RecyclerView Menu Utama
+        setupGridMenu()
+    }
+
+    private fun setupGridMenu() {
+        val gridItems = listOf(
+            GridMenuItem(1, "+ Tambah Lini", "Lini Produksi Baru", R.drawable.ic_monitoring, "#C94F32"),
+            GridMenuItem(2, "Cetak Batch", "Barcode & Label Batch", R.drawable.ic_orders, "#E89B2C"),
+            GridMenuItem(3, "Stok Bahan", "Beras Ketan & Bumbu", R.drawable.ic_reports, "#27AE60"),
+            GridMenuItem(4, "Kualitas QC", "Inspeksi Pengeringan", R.drawable.ic_profile, "#2196F3")
+        )
+
+        val gridAdapter = GridMenuAdapter(gridItems) { menuItem ->
+            when (menuItem.id) {
+                1 -> (activity as? MainActivity)?.selectBottomNavItem(R.id.nav_monitoring)
+                2 -> (activity as? MainActivity)?.selectBottomNavItem(R.id.nav_orders)
+                3 -> (activity as? MainActivity)?.selectBottomNavItem(R.id.nav_reports)
+                4 -> Toast.makeText(requireContext(), "Menu ${menuItem.title} Dipilih", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        binding.rvGridMenu.apply {
+            layoutManager = GridLayoutManager(requireContext(), 2)
+            adapter = gridAdapter
+        }
     }
 
     private enum class PeriodType {
