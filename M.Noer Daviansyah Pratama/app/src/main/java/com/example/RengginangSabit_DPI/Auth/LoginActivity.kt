@@ -5,6 +5,7 @@ import android.content.Intent
 import android.widget.Toast
 import com.example.RengginangSabit_DPI.MainActivity
 import com.example.RengginangSabit_DPI.core.BaseActivity
+import com.example.RengginangSabit_DPI.core.DatabaseHelper
 import com.example.RengginangSabit_DPI.databinding.ActivityLoginBinding
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate) {
@@ -16,7 +17,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         }
 
         binding.btnLogin.setOnClickListener {
-            // 1. Ambil input dari etEmail (bisa berupa Username atau No. HP) dan etPassword
+            // 1. Ambil input dari etEmail (Username/No.HP) dan etPassword
             val inputUser = binding.etEmail.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
 
@@ -26,22 +27,16 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
                 return@setOnClickListener
             }
 
-            // 3. Ambil data akun yang tersimpan dari SharedPreferences (hasil registrasi)
-            val sharedPref = getSharedPreferences("USER_SESSION", Context.MODE_PRIVATE)
-            val savedUsername = sharedPref.getString("KEY_USERNAME", null)
-            val savedPhone = sharedPref.getString("KEY_PHONE", null)
-            val savedPassword = sharedPref.getString("KEY_PASSWORD", null)
+            // 3. Cek kredensial ke Database SQLite (Tabel users)
+            val dbHelper = DatabaseHelper(this)
+            val isDbValid = dbHelper.checkUserLogin(inputUser, password)
 
-            // Cek apakah data cocok dengan akun yang sudah terdaftar
-            val isRegisteredValid = !savedUsername.isNullOrEmpty() &&
-                    (inputUser == savedUsername || inputUser == savedPhone) &&
-                    password == savedPassword
-
-            // Fallback untuk akun demo (email == password)
+            // Fallback untuk akun demo (inputUser == password)
             val isDemoValid = inputUser == password
 
-            if (isRegisteredValid || isDemoValid) {
+            if (isDbValid || isDemoValid) {
                 // Simpan status isLogin = true ke SharedPreferences
+                val sharedPref = getSharedPreferences("USER_SESSION", Context.MODE_PRIVATE)
                 val editor = sharedPref.edit()
                 editor.putBoolean("isLogin", true)
                 editor.apply()
